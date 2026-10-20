@@ -1,0 +1,27 @@
+{
+  "name": "lingo-v2",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@12.14.0",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "dev": "pnpm --parallel --filter @lingo/web --filter @lingo/api run dev",
+    "build": "pnpm --recursive run build",
+    "lint": "pnpm --recursive run lint",
+    "test": "pnpm --recursive run test",
+    "e2e:api": "node apps/api/dist/main.js",
+    "e2e:run": "playwright test",
+    "e2e:web": "node apps/web/node_modules/vite/bin/vite.js apps/web --host 127.0.0.1",
+    "test:e2e": "pnpm build && start-test e2e:api http://127.0.0.1:3000/api/v1/health e2e:web http://127.0.0.1:5173 e2e:run",
+    "typecheck": "pnpm --recursive run typecheck",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.1",
+    "prettier": "^3.4.2",
+    "start-server-and-test": "^3.0.13"
+  }
+}

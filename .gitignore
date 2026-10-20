@@ -1,0 +1,23 @@
+node_modules/
+dist/
+coverage/
+.vite/
+.turbo/
+*.tsbuildinfo
+
+.env
+.env.*
+!.env.example
+
+*.log
+.DS_Store
+Thumbs.db
+
+.playwright-cli/
+playwright-report/
+test-results/
+
+# Local coding-agent state and generated bootstrap graph
+.claude/
+.codex/
+graphify-out/
